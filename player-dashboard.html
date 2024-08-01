@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar Menu -->
+        <nav class="sidebar">
+            <div class="sidebar-menu">
+                <a href="#" id="overview-btn" class="menu-item active">
+                    <i class="fa fa-tachometer-alt"></i> Overview
+                </a>
+                <a href="#" id="performance-btn" class="menu-item">
+                    <i class="fa fa-chart-line"></i> Performance
+                </a>
+                <a href="#" id="health-btn" class="menu-item">
+                    <i class="fa fa-heartbeat"></i> Health
+                </a>
+                <a href="#" id="ai-btn" class="menu-item">
+                    <i class="fa fa-robot"></i> AI Recommendations
+                </a>
+                <a href="#" id="progress-btn" class="menu-item">
+                    <i class="fa fa-flag-checkered"></i> Progress
+                </a>
+                <a href="#" id="communication-btn" class="menu-item">
+                    <i class="fa fa-comments"></i> Communication
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <h2>Player Overview</h2>
+                <div class="overview-cards">
+                    <!-- Devices Connected -->
+                    <div class="card" id="devices-connected">
+                        <h3>Devices Connected</h3>
+                        <ul>
+                            <li><strong>Smart Watch:</strong> Connected, Battery: 85%</li>
+                            <li><strong>Smart Footwear:</strong> Connected, Battery: 70%</li>
+                            <li><strong>Heart Rate Sensor:</strong> Connected, Battery: 60%</li>
+                        </ul>
+                    </div>
+                    <!-- Battery Information -->
+                    <div class="card" id="battery-info">
+                        <h3>Battery Information</h3>
+                        <ul>
+                            <li><strong>Smart Watch:</strong> 85%</li>
+                            <li><strong>Smart Footwear:</strong> 70%</li>
+                            <li><strong>Heart Rate Sensor:</strong> 60%</li>
+                        </ul>
+                    </div>
+                    <!-- Code of the Device -->
+                    <div class="card" id="device-code">
+                        <h3>Device Code</h3>
+                        <ul>
+                            <li><strong>Smart Watch:</strong> SW12345</li>
+                            <li><strong>Smart Footwear:</strong> SF67890</li>
+                            <li><strong>Heart Rate Sensor:</strong> HR54321</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <img src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/415112630_968953824589575_8956224801862747014_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFK6cpuldGZTM5Ho281EktMu-nvXj-sDJa76e9eP6wMlqm_2H8B9zvj2f2Xm8yUxvUDqknRNIFBctgfKPmqZTVc&_nc_ohc=fhqK7ahv35sQ7kNvgGrys1W&_nc_ht=scontent.fcai19-6.fna&gid=ARVJoMmjw2yRCU5xS1qlGAi&oh=00_AYDBAgTgb_EGsanNWM3LxhvbNz-DV6IA3eEETZDkD1QchA&oe=66B06FC7" alt="Mohamed Salah" class="profile-img">
+                    <h3>Mohamed Salah</h3>
+                    <p><strong>Position:</strong> Forward</p>
+                    <p><strong>Team:</strong> Liverpool</p>
+                    <p><strong>Nationality:</strong> Egyptian</p>
+                    <p><strong>Date of Birth:</strong> June 15, 1992</p>
+                    <p><strong>Height:</strong> 1.75 m (5 ft 9 in)</p>
+                    <p><strong>Weight:</strong> 71 kg (156 lbs)</p>
+                    <p><strong>Previous Clubs:</strong> Basel, Chelsea, Fiorentina, Roma</p>
+                    <p><strong>Achievements:</strong> Premier League Golden Boot (2018, 2019), PFA Player of the Year (2018)</p>
+                    <p><strong>Career Goals:</strong> 250+ (as of 2024)</p>
+                </div>
+
+                <div class="ai-chatting">
+                    <h3>AI Chatting</h3>
+                    <div class="chat-box" id="chat-box">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    <textarea id="user-input" placeholder="Type your message..." rows="3"></textarea>
+                    <button id="send-btn">Send</button>
+                </div>
+                
+                <!-- Performance Summary -->
+                <div class="performance-summary">
+                    <h3>Performance Summary</h3>
+                    <p><strong>Overall Performance:</strong> Mohamed Salah has been consistently outstanding this season, demonstrating exceptional skills as a forward. His agility, speed, and finishing have been instrumental in Liverpool's attacking strategy.</p>
+                    <p><strong>Recent Matches:</strong> In the last five matches, Salah has scored 7 goals and provided 3 assists. His ability to find the back of the net and create opportunities for his teammates has been a key factor in Liverpool's success.</p>
+                    <p><strong>Key Metrics:</strong></p>
+                    <ul>
+                        <li><strong>Goals Scored:</strong> 25 (Season Total)</li>
+                        <li><strong>Assists:</strong> 12 (Season Total)</li>
+                        <li><strong>Shots on Target:</strong> 60%</li>
+                        <li><strong>Pass Completion Rate:</strong> 85%</li>
+                        <li><strong>Dribbles Completed:</strong> 75%</li>
+                    </ul>
+                    <p><strong>Strengths:</strong> Salah’s speed and dribbling are his standout strengths. He excels in one-on-one situations and has a high conversion rate for goal-scoring chances.</p>
+                    <p><strong>Areas for Improvement:</strong> While Salah’s finishing is excellent, working on his positioning during set-pieces could provide more scoring opportunities. Additionally, improving his defensive contributions when out of possession would enhance his overall effectiveness.</p>
+                    <p><strong>Upcoming Goals:</strong> Focus on maintaining high performance levels, especially in high-pressure matches. The goal for the next phase is to improve his assist rate and contribute more to defensive transitions.</p>
+                </div>
+                
+                <!-- Notifications -->
+                <div class="notifications">
+                    <h3>Notifications</h3>
+                    <ul>
+                        <li>Reminder: Complete today's training session.</li>
+                        <li>Update: New performance metrics available.</li>
+                        <li>Alert: High heart rate detected during the last match.</li>
+                    </ul>
+                </div>
+                <!-- Performance Charts -->
+                <div class="charts">
+                    <div class="chart-container">
+                        <h3>Heart Rate Over Time</h3>
+                        <canvas id="heart-rate-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Pitch Places Covered</h3>
+                        <canvas id="pitch-places-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Goals Scored</h3>
+                        <canvas id="performance-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Section -->
+            <section id="performance" class="section active">
+                <div class="performance-container">
+                    <h2>Performance</h2>
+                    <!-- Player Information -->
+                    <div class="player-info">
+                        <div class="profile-card">
+                            <img src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/415112630_968953824589575_8956224801862747014_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFK6cpuldGZTM5Ho281EktMu-nvXj-sDJa76e9eP6wMlqm_2H8B9zvj2f2Xm8yUxvUDqknRNIFBctgfKPmqZTVc&_nc_ohc=fhqK7ahv35sQ7kNvgGrys1W&_nc_ht=scontent.fcai19-6.fna&gid=ARVJoMmjw2yRCU5xS1qlGAi&oh=00_AYDBAgTgb_EGsanNWM3LxhvbNz-DV6IA3eEETZDkD1QchA&oe=66B06FC7" alt="Mohamed Salah" class="profile-img">
+                            <h3>Mohamed Salah</h3>
+                            <p>Position: Forward</p>
+                            <p>Team: Liverpool</p>
+                            <p>Appearances: 30</p>
+                            <p>Goals: 25</p>
+                            <p>Assists: 10</p>
+                            <p>Average Rating: 8.5</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Performance Summary -->
+                    <div class="performance-summary">
+                        <h3>Performance Summary</h3>
+                        <p><strong>Overall Performance:</strong> Mohamed Salah has been consistently outstanding this season, demonstrating exceptional skills as a forward. His agility, speed, and finishing have been instrumental in Liverpool's attacking strategy.</p>
+                        <p><strong>Recent Matches:</strong> In the last five matches, Salah has scored 7 goals and provided 3 assists. His ability to find the back of the net and create opportunities for his teammates has been a key factor in Liverpool's success.</p>
+                        <p><strong>Key Metrics:</strong></p>
+                        <ul>
+                            <li><strong>Goals Scored:</strong> 25 (Season Total)</li>
+                            <li><strong>Assists:</strong> 12 (Season Total)</li>
+                            <li><strong>Shots on Target:</strong> 60%</li>
+                            <li><strong>Pass Completion Rate:</strong> 85%</li>
+                            <li><strong>Dribbles Completed:</strong> 75%</li>
+                        </ul>
+                        <p><strong>Strengths:</strong> Salah’s speed and dribbling are his standout strengths. He excels in one-on-one situations and has a high conversion rate for goal-scoring chances.</p>
+                        <p><strong>Areas for Improvement:</strong> While Salah’s finishing is excellent, working on his positioning during set-pieces could provide more scoring opportunities. Additionally, improving his defensive contributions when out of possession would enhance his overall effectiveness.</p>
+                        <p><strong>Upcoming Goals:</strong> Focus on maintaining high performance levels, especially in high-pressure matches. The goal for the next phase is to improve his assist rate and contribute more to defensive transitions.</p>
+                    </div>
+                    
+                    <!-- Notifications -->
+
+                    <div class="notifications">
+                        <h3>Notifications</h3>
+                        <div class="notification-card">
+                            <h4>Upcoming Match</h4>
+                            <p>Prepare for the upcoming match against Manchester City. Focus on improving your finishing skills.</p>
+                        </div>
+                        <div class="notification-card">
+                            <h4>Training Session</h4>
+                            <p>Next training session will focus on ball control and stamina. Be sure to hydrate and rest well.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-chatting">
+                        <h3>AI Chatting</h3>
+                        <div class="chat-box" id="chat-box">
+                            <!-- Chat messages will appear here -->
+                        </div>
+                        <textarea id="user-input" placeholder="Type your message..." rows="3"></textarea>
+                        <button id="send-btn">Send</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Health Section -->
+            <div class="section" id="health">
+                <h2>Health & Wellness</h2>
+                <div class="health-overview">
+                    <div class="health-card">
+                        <h3>Heart Rate</h3>
+                        <img style="width: 485px;" src="img/hr.png" alt="">
+                    </div>  
+                    <div class="health-card">
+                        <h3>Injury Prevention</h3>
+                        <p>Ensure you're following these recommendations to prevent injuries:</p>
+                        <ul>
+                            <li>Warm up properly before each session.</li>
+                            <li>Maintain a balanced diet.</li>
+                            <li>Use proper footwear and check it regularly.</li>
+                            <li>Incorporate stretching and strengthening exercises.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- AI Recommendations Section -->
+            <div class="section" id="ai">
+                <h2>AI Recommendations</h2>
+                <div class="recommendations-container">
+                    <div class="recommendation-card">
+                        <h3>Improve Ball Control</h3>
+                        <p>Based on recent data, enhancing your ball control will significantly impact your overall performance. Incorporate dribbling drills and focus on close ball handling.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Increase Stamina</h3>
+                        <p>Your stamina has room for improvement. Add interval running and stamina-building exercises to your training regimen.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Optimize Diet</h3>
+                        <p>A balanced diet tailored to your performance needs will help you maintain energy levels and support recovery. Consider consulting with a nutritionist for personalized advice.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Focus on Tactical Awareness</h3>
+                        <p>Improving your understanding of game tactics and positioning can enhance your effectiveness on the field. Review match footage and study different game scenarios.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Monitor Recovery</h3>
+                        <p>Ensure you are following a proper recovery routine to prevent injuries and fatigue. Incorporate stretching, hydration, and sufficient rest into your post-match routine.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Enhance Speed and Agility</h3>
+                        <p>Incorporate speed and agility drills into your training to improve your movement and quickness on the field. Plyometric exercises and sprint drills can be beneficial.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Improve Passing Accuracy</h3>
+                        <p>Work on your passing accuracy by practicing with a partner or using passing drills. Focus on precision and timing to improve your ability to deliver accurate passes during matches.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Increase Strength</h3>
+                        <p>Strength training can help you maintain balance and power during matches. Incorporate weight lifting and resistance exercises into your routine to build strength.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Improve Mental Focus</h3>
+                        <p>Mental focus is crucial for peak performance. Practice mindfulness and visualization techniques to improve concentration and decision-making on the field.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Work on Positional Play</h3>
+                        <p>Understanding your positioning in different game situations can enhance your effectiveness. Study positional play and work on your awareness during games.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Develop Set-Piece Skills</h3>
+                        <p>Improving your skills on set-pieces such as free kicks and corners can give you an edge. Practice these techniques regularly and analyze successful set-pieces from top players.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Improve Coordination</h3>
+                        <p>Coordination exercises can enhance your overall performance. Engage in drills that improve hand-eye coordination and footwork to aid in your game performance.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Focus on Ball Passing Speed</h3>
+                        <p>Increase the speed of your passing to improve the flow of your team's play. Use speed drills to practice quick and accurate passing.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Enhance Flexibility</h3>
+                        <p>Flexibility is important for preventing injuries and improving performance. Incorporate stretching and flexibility exercises into your routine.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Improve Communication</h3>
+                        <p>Effective communication with teammates can improve team coordination and strategy execution. Practice clear and concise communication on and off the field.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Work on Mental Toughness</h3>
+                        <p>Building mental toughness helps you stay focused under pressure. Engage in mental training techniques to handle stressful situations better during games.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Enhance Reaction Time</h3>
+                        <p>Improving your reaction time can help you respond more quickly during matches. Use reaction drills and exercises to sharpen your reflexes.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Develop Leadership Skills</h3>
+                        <p>Leadership on the field can inspire your team and drive performance. Work on developing leadership qualities such as motivation, guidance, and support for teammates.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Practice Ball Control Under Pressure</h3>
+                        <p>Simulate game scenarios where you are under pressure to improve your ball control. Use drills that replicate high-pressure situations to enhance your skills.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Refine Dribbling Techniques</h3>
+                        <p>Improving your dribbling skills can make you more effective in one-on-one situations. Practice different dribbling techniques to enhance your ball handling.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Work on Defensive Positioning</h3>
+                        <p>Effective defensive positioning can help you block attacks and support your team. Study defensive strategies and practice positioning during training sessions.</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h3>Improve Passing Variety</h3>
+                        <p>Being able to execute a variety of passes can make your play more unpredictable and effective. Practice different types of passes and use them in various game situations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress and Goals Section -->
+            <div class="section" id="progress">
+                <h2>Progress and Goals</h2>
+                <div class="progress-container">
+                    <div class="progress-card">
+                        <h3>Fitness Goals</h3>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 75%;"></div>
+                        </div>
+                        <p>75% of your fitness goal has been achieved. Keep up the great work to reach 100%!</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Training Sessions Completed</h3>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                        </div>
+                        <p>You have completed 60% of your planned training sessions. Stay consistent to complete the remaining sessions.</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Skills Improvement</h3>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                        <p>85% improvement in your skills. Continue practicing to achieve complete mastery.</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Match Performance</h3>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <p>Your match performance is at 90%. Keep up the excellent work!</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Recovery Progress</h3>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <p>You are 80% on track with your recovery goals. Maintain your routine to reach full recovery.</p>
+                    </div>
+                </div>
+                <div class="goals-container">
+                    <h3>Upcoming Goals</h3>
+                    <ul class="goals-list">
+                        <li><strong>Achieve 100% in Fitness Goals</strong> - Continue with your current fitness plan to reach this goal.</li>
+                        <li><strong>Complete All Training Sessions</strong> - Follow your training schedule diligently to achieve this.</li>
+                        <li><strong>Master New Skills</strong> - Focus on practicing and refining new skills.</li>
+                        <li><strong>Enhance Match Performance</strong> - Work on areas of improvement identified in recent matches.</li>
+                        <li><strong>Achieve Full Recovery</strong> - Stick to your recovery routine and consult with your physiotherapist.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Communication Section -->
+            <div class="section" id="communication">
+                <h2>Communication</h2>
+                <div class="communication-container">
+                    <div class="messages">
+                        <h3>Recent Messages</h3>
+                        <ul class="message-list">
+                            <li class="message">
+                                <div class="message-header">
+                                    <span class="sender">Coach Jorgen Klub</span>
+                                    <span class="time">10:30 AM</span>
+                                </div>
+                                <p class="message-text">Great job on your recent performance! Keep up the hard work and focus on the upcoming match.</p>
+                            </li>
+                            <li class="message">
+                                <div class="message-header">
+                                    <span class="sender">Teammate Alexander Arnold</span>
+                                    <span class="time">Yesterday</span>
+                                </div>
+                                <p class="message-text">Hey, are we still on for the training session tomorrow? Let me know if you need a ride.</p>
+                            </li>
+                            <li class="message">
+                                <div class="message-header">
+                                    <span class="sender">Nunez</span>
+                                    <span class="time">Last Week</span>
+                                </div>
+                                <p class="message-text">Your recovery plan is going well. Remember to do the exercises as instructed and stay hydrated.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="notifications">
+                        <h3>Notifications</h3>
+                        <ul class="notification-list">
+                            <li class="notification">
+                                <div class="notification-content">
+                                    <span class="notification-time">1 hour ago</span>
+                                    <p>Your training schedule has been updated. Please check the new timings in the calendar.</p>
+                                </div>
+                            </li>
+                            <li class="notification">
+                                <div class="notification-content">
+                                    <span class="notification-time">3 hours ago</span>
+                                    <p>New analysis report is available. Review it to track your progress and upcoming tasks.</p>
+                                </div>
+                            </li>
+                            <li class="notification">
+                                <div class="notification-content">
+                                    <span class="notification-time">Yesterday</span>
+                                    <p>Reminder: Team meeting at 4 PM today. Please be on time and prepare your updates.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contact">
+                        <h3>Contact Teammates</h3>
+                        <form class="contact-form">
+                            <label for="contact-name">Name:</label>
+                            <input type="text" id="contact-name" name="contact-name" placeholder="Enter teammate's name">
+                            
+                            <label for="contact-message">Message:</label>
+                            <textarea id="contact-message" name="contact-message" rows="4" placeholder="Enter your message here"></textarea>
+                            
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
+
+    <!-- Notice for Mobile/Tablet Users -->
+<div id="device-notice" class="device-notice">
+    <p>This dashboard is optimized for laptops and desktops only. Please access it from a laptop or desktop for the best experience.</p>
+</div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/mobile.js"></script>
+</body>
+</html>
